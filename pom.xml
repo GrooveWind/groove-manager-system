@@ -26,14 +26,13 @@
         <module>groove-web</module>
     </modules>
 
-
     <properties>
 
         <!-- base config -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <project.version>1.0.0-SNAPSHOT</project.version>
+        <start-class>groove.wind.me.web.MainApplication</start-class>
 
         <!-- middleware version -->
         <spring.boot.version>1.5.3.RELEASE</spring.boot.version>
@@ -273,6 +272,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
